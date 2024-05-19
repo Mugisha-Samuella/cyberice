@@ -9,6 +9,7 @@ const ResourcesCards = (props) => {
                <img src={props.img} style={{width:125}} alt="" />
                <div className=' max-w-[15rem]'>
                 <h2 className='text-xl font-semibold font-Poppins'>{props.name}</h2>
+                <h3>{props.author}</h3>
                 <p className=''>{props.description}</p>
                 
                 <div style={{color: 'yellow'}} className="flex flex-row">
