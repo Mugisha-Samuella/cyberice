@@ -6,7 +6,6 @@ import Resources from './Pages/Resources'
 import Blog from './Pages/Blog'
 import NoPage from './Pages/NoPage'
 
-
 const App = () => {
   return (
     <div>

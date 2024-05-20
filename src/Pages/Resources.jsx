@@ -20,12 +20,15 @@ const Resources = () => {
   });
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
+      <div className="flex flex-row justify-center items-center">
       <Sidebar/>
       <div>
-        <div className="w-screen justify-center items-center flex flex-col md:flex-row">
+        <h1>Latest releases</h1>
+        <div className="justify-center items-center flex flex-col md:flex-row">
       {books}
+      </div>
       </div>
       </div>
       
