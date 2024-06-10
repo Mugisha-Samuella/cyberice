@@ -1,20 +1,9 @@
-import React, { useState } from 'react'
-import Form from '../Components/Form/Form'
+import React from 'react'
 
-const Dashboard = () => {
-
-    const [dataFromChild, setDataFromChild] = useState('');
-
-    const handleData = (data) => {
-        setDataFromChild(data)
-    }
-
+export default function Dashboard() {
   return (
     <div>
-      <h1>Good Morning {dataFromChild} </h1>
-      <Form onSendData={handleData}/>
+      Welcome to your Dashboard!
     </div>
   )
 }
-
-export default Dashboard

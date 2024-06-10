@@ -6,7 +6,7 @@ import Services from '../Components/Services/page'
 
 const Home = () => {
   return (
-    <div className='bg-Dark text-white'>
+    <div className='bg-Dark  text-white'>
       <Navbar/>
       <Hero/>
       <Clients/>

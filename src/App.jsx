@@ -5,11 +5,10 @@ import Services from './Pages/Services'
 import Resources from './Pages/Resources'
 import Blog from './Pages/Blog'
 import SignUp from './Pages/SignUp'
-import Dashboard from './Pages/Dashboard'
 
 const App = () => {
   return (
-    <div>
+    <div >
     <div>
       <BrowserRouter>
       <Routes>
@@ -19,7 +18,6 @@ const App = () => {
         <Route path='/resources' element={<Resources/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
       </BrowserRouter>
     </div>
