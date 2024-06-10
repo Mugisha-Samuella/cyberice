@@ -36,7 +36,7 @@ export default {
         Silver: "#F5F7FA",
         White: "#FFFFFF",
         // Primary: "#28CB8B",
-        Primary: "#0368FF",
+        Primary: "#0c7b93",
         lightDark: "#221C3E",
         Secondary: "#263238",
         greenshade: {

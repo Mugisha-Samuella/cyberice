@@ -13,12 +13,12 @@ export default function Community() {
       </div>
       <div className="flex flex-col gap-6 md:flex-row pt-4 md:px-[3rem]">
         <div className="flex flex-col  justify-center items-center px-4 pt-4">
-          <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-md p-4">
+          <div className="flex flex-col justify-center items-center bg-Dark2 shadow-sm rounded-md p-4">
             <div className="">
               <img src={"/Assets/Icons/members.svg"} width={50} height={50} />
             </div>
             <h1 className="font-bold text-3xl text-center pt-4">
-              Membership <br /> Organisations
+            Security <br /> threat data 
             </h1>
             <p className="pt-2 text-center text-sm">
               Our membership management software provides full automation of
@@ -27,12 +27,12 @@ export default function Community() {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center px-4 pt-4">
-          <div className="flex flex-col justify-center items-center bg-GreyLight shadow-sm rounded-md p-4">
+          <div className="flex flex-col justify-center items-center bg-Dark2 shadow-sm rounded-md p-4">
             <div className="">
               <img src={"/Assets/Icons/members.svg"} width={50} height={50} />
             </div>
             <h1 className="font-bold text-3xl text-center pt-4 ">
-            National <br /> Associations
+            Intrusion <br /> detection logs
             </h1>
             <p className="pt-2 text-center text-sm">
               Our membership management software provides full automation of
@@ -41,12 +41,12 @@ export default function Community() {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center px-4 pt-4">
-          <div className="flex flex-col justify-center items-center bg-white shadow-sm rounded-md p-4">
+          <div className="flex flex-col justify-center items-center bg-Dark2 shadow-sm rounded-md p-4">
             <div className="">
               <img src={"/Assets/Icons/members.svg"} width={50} height={50} />
             </div>
             <h1 className="font-bold text-3xl text-center pt-4">
-            Clubs And <br /> Groups    
+            Incident <br /> response records 
             </h1>
             <p className="pt-2 text-center text-sm">
               Our membership management software provides full automation of
