@@ -4,7 +4,8 @@ import Home from './Pages/Home'
 import Services from './Pages/Services'
 import Resources from './Pages/Resources'
 import Blog from './Pages/Blog'
-import NoPage from './Pages/NoPage'
+import SignUp from './Pages/SignUp'
+import Dashboard from './Pages/Dashboard'
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
         <Route path='/services' element={<Services/>}/>
         <Route path='/resources' element={<Resources/>}/>
         <Route path='/blog' element={<Blog/>}/>
-        <Route path='*' element={<NoPage/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
       </BrowserRouter>
     </div>

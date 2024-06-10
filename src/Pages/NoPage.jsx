@@ -3,7 +3,8 @@ import React from 'react'
 const NoPage = () => {
   return (
     <div>
-      Error 404 : Page not found
+      Hello
+       <Form/>
     </div>
   )
 }

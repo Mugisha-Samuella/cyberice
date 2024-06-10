@@ -27,15 +27,17 @@ export default {
        "Cursive": ["Cedarville Cursive", 'cursive']
       },
       colors: {
-        Black: "#263238",
-        D_Grey: "#4D4D4D",
+        Dark: "#222834",
+        Dark2: "#242C3B",
+        D_Grey: "#ffffff",
         Grey: "#717171",
-        GreyLight: "#89939E",
+        GreyLight: "#4C5770",
         Grey_blue: "#ABBED1",
         Silver: "#F5F7FA",
         White: "#FFFFFF",
         // Primary: "#28CB8B",
-        Primary: "#4CAF4F",
+        Primary: "#0368FF",
+        lightDark: "#221C3E",
         Secondary: "#263238",
         greenshade: {
           100: "#43A046",

@@ -1,29 +1,28 @@
-import React from 'react'
-import Resources from '../../Pages/Resources'
+import React from "react";
+import ProductCard from "../ProductCard/ProductCard";
 
-const ResourcesCards = (props) => {
+const products = [
+  {
+    name: "Product 1",
+    img: "https://via.placeholder.com/150",
+    description: "This is a great product.",
+  },
+  {
+    name: "Product 2",
+    img: "https://via.placeholder.com/150",
+    description: "This is another great product.",
+  },
+  // Add more products as needed
+];
+
+const ResourcesCards = () => {
   return (
-    <>
-      <div className='w-full justify-center items-center  flex flex-col md:flex-row'>
-          <div className=' flex flex-row  justify-center items-center gap-4 md:flex-col shadow-md p-4'>
-               <img src={props.img} style={{width:125}} alt="" />
-               <div className=' max-w-[15rem]'>
-                <h2 className='text-xl font-semibold font-Poppins'>{props.name}</h2>
-                <h3 className='text-slate-600'>{props.author}</h3>
-                <p className=''>{props.description}</p>
-                
-                <div style={{color: 'yellow'}} className="flex flex-row">
-                <h3 >{props.star}</h3>
-                <h3>{props.star}</h3>
-                <h3>{props.star}</h3>
-                <h3>{props.star}</h3>
-                <h3>{props.halfStar}</h3>
-                </div>
-               </div>
-          </div>
-      </div>
-    </>
-  )
-}
+    <div className="flex flex-wrap justify-center items-center gap-4">
+      {products.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
+    </div>
+  );
+};
 
-export default ResourcesCards
+export default ResourcesCards;
