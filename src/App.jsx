@@ -5,6 +5,8 @@ import Services from './Pages/Services'
 import Resources from './Pages/Resources'
 import Blog from './Pages/Blog'
 import SignUp from './Pages/SignUp'
+import Login from './Pages/Login'
+import ThreatDashboard from './Pages/ThreatDashboard'
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path='/resources' element={<Resources/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/threatdashboard' element={<ThreatDashboard/>}/>
       </Routes>
       </BrowserRouter>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios"; // For backend API calls
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -17,107 +18,97 @@ const SignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await axios.post(
-        "http://localhost:3001/register",
-        formData
-      ); // Adjust API endpoint
+      const response = await axios.post("http://localhost:3001/register", formData);
       if (response.data.error) {
         setError(response.data.error);
-        setSuccess(null); // Clear any previous success messages
+        setSuccess(null);
       } else {
         setSuccess("Account created successfully!");
-        setError(null); // Clear any previous errors
+        setError(null);
       }
     } catch (error) {
       console.error(error);
-      console.log(`This is the error: ${error}`);
-      setError("Signup failed. Try Again");
-      setSuccess(null); // Clear any previous success messages
+      setError("Signup failed. Try again.");
+      setSuccess(null);
     }
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-center text-left items-center">
-      <div className="bg-Dark min-h-screen md:w-screen hidden md:flex">
-        Hello
+    <div className="flex flex-col md:flex-row justify-center text-left items-center min-h-screen">
+      <div className="bg-Dark min-h-screen md:w-1/2 hidden md:flex justify-center items-center">
+        <h1 className="text-white text-5xl">Join Us</h1>
       </div>
-      <div className="w-screen p-20 justify-items-center">
-        <h1 className="text-5xl text-center pb-20 font-bold">CyberIce</h1>
-        <form
-          className="space-y-1 flex flex-col md:flex-wrap md:w-full"
-          onSubmit={handleSubmit}
-        >
-          {error && <div className="text-red-500 font-bold">{error}</div>}
-          {success && <div className="text-green-500 font-bold">{success}</div>}
-          <div className="flex flex-col">
-            <label htmlFor="name" className="text-sm font-medium mb-2">
-              Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              onChange={handleChange}
-              value={formData.name}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="email" className="text-sm font-medium mb-2">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              onChange={handleChange}
-              value={formData.email}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="password" className="text-sm font-medium mb-2">
-              Password
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              onChange={handleChange}
-              value={formData.password}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label
-              htmlFor="confirmPassword"
-              className="text-sm font-medium mb-2"
+      <div className="w-screen p-20 flex justify-center items-center md:w-1/2">
+        <div className="w-full max-w-md">
+          <h1 className="text-5xl text-center pb-10 font-bold">CyberIce</h1>
+          <h2 className="text-3xl text-center pb-6 text-primary">Register</h2>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {error && <div className="text-red-500 font-bold">{error}</div>}
+            {success && <div className="text-green-500 font-bold">{success}</div>}
+            <div className="flex flex-col">
+              <label htmlFor="name" className="text-sm font-medium mb-2">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter Name"
+                className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onChange={handleChange}
+                value={formData.name}
+                required
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-sm font-medium mb-2">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter Email"
+                className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onChange={handleChange}
+                value={formData.email}
+                required
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="password" className="text-sm font-medium mb-2">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter Password"
+                className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onChange={handleChange}
+                value={formData.password}
+                required
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="confirmPassword" className="text-sm font-medium mb-2">Confirm Password</label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                onChange={handleChange}
+                value={formData.confirmPassword}
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="inline-flex items-center px-20 py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Confirm Password
-            </label>
-            <input
-              className="rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              required
-              onChange={handleChange}
-              value={formData.confirmPassword}
-            />
+              Register
+            </button>
+          </form>
+          <div className="text-center mt-6">
+            <p className="text-sm">Already have an account? <Link to='/login' className="text-indigo-500 hover:text-indigo-700">Login</Link></p>
           </div>
-          <button
-            type="submit"
-            className="inline-flex items-center px-20 py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            SignUp
-          </button>
-        </form>
-        <h1>Don't have an Account? Login</h1>
+        </div>
       </div>
     </div>
   );
