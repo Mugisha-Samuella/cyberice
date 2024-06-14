@@ -14,7 +14,7 @@ const Login = () => {
             const response = await axios.post('http://localhost:3001/login', { email, password });
             if (response.data === "Success") {
                 alert('Login successful!');
-                navigate('/home');
+                navigate('/threatdashboard');
             } else {
                 alert(response.data);
             }
