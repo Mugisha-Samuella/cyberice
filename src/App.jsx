@@ -7,6 +7,7 @@ import Blog from './Pages/Blog'
 import SignUp from './Pages/SignUp'
 import Login from './Pages/Login'
 import ThreatDashboard from './Pages/ThreatDashboard'
+import ForgotPassword from './Pages/ForgotPassword'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/threatdashboard' element={<ThreatDashboard/>}/>
+        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
       </Routes>
       </BrowserRouter>
     </div>
