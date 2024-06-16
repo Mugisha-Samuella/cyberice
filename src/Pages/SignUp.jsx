@@ -39,10 +39,10 @@ const SignUp = () => {
       <div className="bg-Dark min-h-screen md:w-1/2 hidden md:flex justify-center items-center">
         <h1 className="text-white text-5xl">Join Us</h1>
       </div>
-      <div className="p-20 flex justify-center items-center md:w-1/2">
+      <div className="p-10 flex justify-center items-center md:w-1/2">
         <div className="w-full max-w-md">
-          <h1 className="text-5xl text-center pb-10 font-bold">CyberIce</h1>
-          <h2 className="text-3xl text-center pb-6 text-primary">SignUp</h2>
+          <h1 className=" text-center pb-2 font-bold">CyberIce</h1>
+          <h2 className=" text-center pb-6 text-primary">SignUp</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             {error && <div className="text-red-500 font-bold">{error}</div>}
             {success && <div className="text-green-500 font-bold">{success}</div>}
@@ -100,9 +100,9 @@ const SignUp = () => {
             </div>
             <button
               type="submit"
-              className="inline-flex items-center px-20 py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex items-center px-[12.4rem] py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Register
+              SignUp
             </button>
           </form>
           <div className="text-center mt-6">
