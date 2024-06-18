@@ -10,20 +10,25 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
-      if (response.data === "Success") {
-        alert("Login successful!");
-        navigate("/threatdashboard");
-      } else {
-        alert(response.data);
-      }
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   const response = await axios.post("http://localhost:3001/login", {
+    //     email,
+    //     password,
+    //   });
+    //   if (response.data === "Success") {
+    //     alert("Login successful!");
+    //     navigate("/threatdashboard");
+    //   } else {
+    //     alert(response.data);
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    // }
+
+    axios
+      .post("http://localhost:3001/login", { email, password })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -68,8 +73,9 @@ const Login = () => {
             </div>
             <div className="pt-1">
               <Link
-              to="/forgotpassword"
-              className="text-indigo-500 hover:text-indigo-700">
+                to="/forgotpassword"
+                className="text-indigo-500 hover:text-indigo-700"
+              >
                 Forgot Password?
               </Link>
             </div>
