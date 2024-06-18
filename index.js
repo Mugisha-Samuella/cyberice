@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
+const nodemailer = require("nodemailer");
 const FormDataModel = require("./models/FormData");
 const SecurityThreatModel = require("./models/SecurityThreat");
 
@@ -16,18 +17,14 @@ mongoose
     // useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB!");
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
   });
 
 app.post("/register", async (req, res) => {
-  const { name, email, password, confirmPassword } = req.body;
-
-  if (password !== confirmPassword) {
-    return res.status(400).json({ error: "Passwords do not match" });
-  }
+  const { name, email, password } = req.body;
 
   try {
     const existingUser = await FormDataModel.findOne({ email });
@@ -35,16 +32,19 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ error: "Email already registered" });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+
     const newUser = new FormDataModel({
       name,
       email,
-      password: hashedPassword, // Save the hashed password
+      password: hash, // Save the hashed password
     });
 
     await newUser.save();
     res.status(201).json("Account created successfully!");
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Server error" });
   }
 });
@@ -75,7 +75,13 @@ app.post("/threats", async (req, res) => {
   const { title, description, severity, dateReported, status } = req.body;
 
   try {
-    const newThreat = new SecurityThreatModel({ title, description, severity, dateReported, status });
+    const newThreat = new SecurityThreatModel({
+      title,
+      description,
+      severity,
+      dateReported,
+      status,
+    });
     await newThreat.save();
     res.status(201).json(newThreat);
   } catch (error) {
@@ -97,7 +103,11 @@ app.put("/threats/:id", async (req, res) => {
   const { title, description, severity, dateReported, status } = req.body;
 
   try {
-    const updatedThreat = await SecurityThreatModel.findByIdAndUpdate(id, { title, description, severity, dateReported, status }, { new: true });
+    const updatedThreat = await SecurityThreatModel.findByIdAndUpdate(
+      id,
+      { title, description, severity, dateReported, status },
+      { new: true }
+    );
     res.status(200).json(updatedThreat);
   } catch (error) {
     res.status(500).json({ error: "Server error" });
