@@ -41,14 +41,14 @@ function ForgotPassword() {
             name="email"
             type="email"
             placeholder="Enter Email"
-            className="rounded-md border border-gray-300 px-20 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="rounded-md border text-center border-gray-300 px-20 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500"
             onChange={(event) => setEmail(event.target.value)}
             value={email}
             required
           />
           <button
             type="submit"
-            className="inline-flex items-center px-[4.4rem] py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-[4.4rem] text-center py-2 bg-Dark text-white rounded-md hover:bg-Dark2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Send
           </button>
