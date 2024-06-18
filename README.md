@@ -80,7 +80,7 @@ Once both servers are running, you can access the application at `http://localho
 
 ### User Endpoints
 
-- **POST /register**: Register a new user
+- **POST /signup**: Register a new user
 - **POST /login**: Authenticate a user and login
 
 ### Security Threat Endpoints
