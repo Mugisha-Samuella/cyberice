@@ -51,18 +51,18 @@ To set up this project locally, follow these steps:
 4. **Start the backend server**:
    ```bash
    cd backend
-   npm start
+   npm run start
    ```
 
 5. **Start the frontend development server**:
    ```bash
    cd ../frontend
-   npm start
+   npm run dev
    ```
 
 ## Usage
 
-Once both servers are running, you can access the application at `http://localhost:3000`.
+Once both servers are running, you can access the application at `http://localhost:3001`.
 
 ### User Registration
 
