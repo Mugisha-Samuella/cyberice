@@ -20,10 +20,6 @@ CyberIce is a comprehensive web application designed to manage user registration
 - **Loading Screen**: Displays a loading screen before confirming the backend server is running.
 - **Responsive Design**: The frontend is built with responsiveness in mind.
 
-## Demo
-
-A live demo of the application can be accessed [here](#).
-
 ## Installation
 
 To set up this project locally, follow these steps:
