@@ -26,7 +26,7 @@ To set up this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/cyberice.git
+   git clone https://github.com/Mugisha-Samuella/cyberice.git
    cd cyberice
    ```
 
