@@ -3,26 +3,34 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const nodemailer = require("nodemailer");
 const FormDataModel = require("./models/FormData");
 const SecurityThreatModel = require("./models/SecurityThreat");
+// const generateToken = require('./authorisation/jwt'); // Uncomment when ready
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose
-  .connect("mongodb://localhost:27017/cybericedb", {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB!");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
+// MongoDB Connection
+mongoose.connect("mongodb://localhost:27017/cybericedb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log("Connected to MongoDB!");
+})
+.catch((error) => {
+  console.error("Error connecting to MongoDB:", error);
+});
 
+// Health Check Endpoint
+app.get("/health", (req, res) => {
+  res.status(200).json({ message: "Server is running" });
+});
+
+// Routes
 app.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -61,6 +69,8 @@ app.post("/login", async (req, res) => {
     const isPasswordValid = await bcrypt.compare(password, user.password); // Compare the password
 
     if (isPasswordValid) {
+      // const token = generateToken(email, password); // Uncomment when ready
+      // res.json(token);
       res.json("Success");
     } else {
       res.status(400).json("Wrong password");
@@ -125,6 +135,7 @@ app.delete("/threats/:id", async (req, res) => {
   }
 });
 
+// Server Listening
 app.listen(3001, () => {
   console.log("Server listening on http://127.0.0.1:3001");
 });
